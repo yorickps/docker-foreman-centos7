@@ -1,19 +1,20 @@
 #!/bin/bash
 
 #Cleaning up Yum repo
-sudo yum clean all
+yum clean all
 
 # Installing Puppet Repo"
-sudo rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+yum -y install https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
 
 # Installing Foreman repo"
-sudo yum -y install epel-release http://yum.theforeman.org/releases/1.9/el7/x86_64/foreman-release.rpm
+yum -y install epel-release 
+yum -y install https://yum.theforeman.org/releases/1.14/el7/x86_64/foreman-release.rpm
 
-sudo yum -y install foreman-installer
+yum -y install foreman-installer
 
 export FACTER_fqdn=$(hostname)
 
-sudo foreman-installer --foreman-admin-password foreman
+foreman-installer --foreman-admin-password foreman
 
 # Cleaning yum repo
 yum clean all
