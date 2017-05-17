@@ -12,7 +12,8 @@ yum -y install https://yum.theforeman.org/releases/1.14/el7/x86_64/foreman-relea
 
 yum -y install foreman-installer
 
-export FACTER_fqdn=$(hostname)
+export FACTER_fqdn=foreman.ice.local
+#export FACTER_fqdn=$(hostname)
 
 foreman-installer --foreman-admin-password foreman
 
