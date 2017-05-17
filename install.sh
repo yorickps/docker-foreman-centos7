@@ -17,6 +17,7 @@ sed -i '/^PasswordAuthentication/PasswordAuthentication yes/g' /etc/ssh/sshd_con
 
 systemctl start firewalld
 firewall-cmd --zone=public --add-port=8140/tcp --permanent
+firewall-cmd --zone=public --add-port=8443/tcp --permanent
 firewall-cmd --zone=public --add-port=22/tcp --permanent
 firewall-cmd --reload
 
@@ -25,7 +26,7 @@ yum -y install foreman-installer
 export FACTER_fqdn=foreman.ice.local
 #export FACTER_fqdn=$(hostname)
 
-foreman-installer --foreman-admin-password foreman
+#foreman-installer --foreman-admin-password foreman
 
 # Cleaning yum repo
 yum clean all
