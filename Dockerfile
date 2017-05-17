@@ -8,7 +8,7 @@ ADD ./start.sh /opt/start.sh
 RUN yum clean all
 
 # Installing Puppet Repo"
-RUN yum -y install https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
+RUN yum -y install https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm && yum -y install puppet-agent
 
 # Installing Foreman repo"
 RUN yum -y install epel-release 
