@@ -2,8 +2,7 @@ version: '2'
 services:
   foreman:
     build: .
-    foreman:
-      image: foreman
-      ports:
-        - 3000
-        - 443
+    image: foreman
+    ports:
+      - 3000
+      - 443
