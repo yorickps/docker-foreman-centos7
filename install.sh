@@ -19,6 +19,7 @@ systemctl start firewalld
 firewall-cmd --zone=public --add-port=8140/tcp --permanent
 firewall-cmd --zone=public --add-port=8443/tcp --permanent
 firewall-cmd --zone=public --add-port=22/tcp --permanent
+firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --reload
 
 yum -y install foreman-installer
